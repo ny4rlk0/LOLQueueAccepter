@@ -25,8 +25,7 @@ namespace LOLQueueAccepter
                     //string[] ph = Regex.Split(gameSession[1], "phase");
                     //string phase = ph.Last().Split('"')[2];
                     //Method 2
-                    string phase = gameSession[1].Split(new [] { "phase" }, StringSplitOptions.None).Last().Split('"')[2];//İşe yarıyormu şüpheli
-                    //File.WriteAllText(Application.StartupPath.ToString() + "\\b.txt", phase.ToString());
+                    string phase = gameSession[1].Split(new [] { "phase" }, StringSplitOptions.None).Last().Split('"')[2];
                     switch (phase)
                     {
                         case "Lobby":
@@ -37,6 +36,7 @@ namespace LOLQueueAccepter
                             break;
                         case "ReadyCheck":
                             acceptMatchMaking();
+                            Thread.Sleep(2000);
                             break;
                         case "ChampSelect":
                             Thread.Sleep(5000);
@@ -54,16 +54,17 @@ namespace LOLQueueAccepter
                             Thread.Sleep(5000);
                             break;
                         default:
-                            Thread.Sleep(1000);
-                            File.WriteAllText(Application.StartupPath.ToString() + "\\b.txt", phase.ToString());
+                            Thread.Sleep(2000);
+                            //File.WriteAllText(Application.StartupPath.ToString() + "\\UnknownPhases_SendToDeveloper.txt", phase.ToString());
                             break;
                     }
                 }
+                Thread.Sleep(500);
             }
         }
         private static void acceptMatchMaking()
         {
-                Main.cliRequest("POST","lol-matchmaking/v1/ready-check/accept");
+            Main.cliRequest("POST","lol-matchmaking/v1/ready-check/accept");
         }
     }
 }

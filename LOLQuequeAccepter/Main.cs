@@ -20,13 +20,13 @@ namespace LOLQueueAccepter
         private static string[] lolAuth;
         private static int pid = 0;
         public static bool isLolRunning=false;
-        static Form1 form1;
 
 
         public static void lolStatus()
         {
             while (true)
             {
+                
                 Process cli = Process.GetProcessesByName("LeagueClientUx").FirstOrDefault();
                 if (cli!=null)
                 {
@@ -37,8 +37,8 @@ namespace LOLQueueAccepter
                 else
                 {
                     isLolRunning = false;
-                    Thread.Sleep(1000);
                 }
+                Thread.Sleep(2000);
             }
         }
         #region getAuth
