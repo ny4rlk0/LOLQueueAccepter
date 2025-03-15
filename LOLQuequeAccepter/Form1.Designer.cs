@@ -42,6 +42,7 @@
             this.label1.Size = new System.Drawing.Size(226, 26);
             this.label1.TabIndex = 2;
             this.label1.Text = "Waiting for LoL Client!";
+            this.label1.Visible = false;
             // 
             // Form1
             // 
