@@ -3,4 +3,6 @@
 <br>
 <br>FPS BOOST: "C:\Riot Games\League of Legends\Game\League of Legends.exe" Sağ tıkla > Özellikler > Tam Ekran İyileştirmelerini Devre Dışı Bırak > Uygula > Tamam.
 <br>
-<br>Lenovo Notu: dGPU (Harici GPU) Only modu seçtikten sonra Nvidia Denetim Masasından G-SYNC'i kapat. Yoksa Lenovo LOQ donuyor / kekemeliyor (stutter). 
+<br>Lenovo Notu: dGPU (Harici GPU) Only modu seçtikten sonra Nvidia Denetim Masasından G-SYNC'i kapat. Yoksa Lenovo LOQ donuyor / kekemeliyor (stutter).
+<br>
+<br>LoL Notu: FPS 200 ya da 144 sabitle. 200 FPS Üstünde karakter hareket komutu verince saçma sapan yerlere anlık ışınlanarak oyunu oynanamaz hale getiriyor.
