@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // denetlenir. Bütünleştirilmiş kod ile ilişkili bilgileri değiştirmek için
 // bu öznitelik değerlerini değiştirin.
 [assembly: AssemblyTitle("League of Legends Queue Accepter")]
-[assembly: AssemblyDescription("League of Legends Automatic Queue Accepter")]
+[assembly: AssemblyDescription("League of Legends Queue Accepter")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("League of Legends Queue Accepter")]
-[assembly: AssemblyCopyright("Copyright ny4rlk0 League of Legends Automatic Queue Accepter 15.03.2025")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("-")]
+[assembly: AssemblyProduct("Automatic Queue Accepter")]
+[assembly: AssemblyCopyright("ny4rlk0 20.03.2025")]
+[assembly: AssemblyTrademark("-")]
 [assembly: AssemblyCulture("")]
 
 // ComVisible özniteliğinin false olarak ayarlanması bu bütünleştirilmiş koddaki türleri

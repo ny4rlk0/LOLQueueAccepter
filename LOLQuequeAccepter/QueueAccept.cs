@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Diagnostics;
 using System.Threading;
-using System.Windows.Markup;
-using System.Windows.Forms;
-using System.IO;
 
 namespace LOLQueueAccepter
 {
@@ -59,12 +51,9 @@ namespace LOLQueueAccepter
                             break;
                     }
                 }
-                Thread.Sleep(500);
+                else Thread.Sleep(2000);
             }
         }
-        private static void acceptMatchMaking()
-        {
-            Main.cliRequest("POST","lol-matchmaking/v1/ready-check/accept");
-        }
+        private static void acceptMatchMaking() {Main.cliRequest("POST","lol-matchmaking/v1/ready-check/accept");}
     }
 }

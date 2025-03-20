@@ -1,18 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Net.Http.Headers;
-using System.Net.Http;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Diagnostics;
-using System.IO;
 using System.Reflection;
 using System.Security.Principal;
 
@@ -25,19 +14,16 @@ namespace LOLQueueAccepter
         {
             InitializeComponent();
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
+            runAsAdministrator();
             this.Activated += AfterLoading;
         }
         private void AfterLoading(object sender, EventArgs e)
         {
             this.Activated -= AfterLoading;
-            runAsAdministrator();
-            //Write your code here.
             Thread a = new Thread(() => TaskHandler.runTasks());
             a.Start();
-
             notifyIcon1.Icon = Properties.Resources.red_heart_256x235;
             notifyIcon1.ContextMenu = new ContextMenu();
             MenuItem Exit = new MenuItem("Exit / Çıkış");
@@ -46,7 +32,7 @@ namespace LOLQueueAccepter
             notifyIcon1.Visible = true;
             notifyIcon1.Text = "LoL Auto Queue Accepter\ngithub.com/ny4rlk0";
             notifyIcon1.BalloonTipText = "LoL Auto Queue Accepter has been started!\ngithub.com/ny4rlk0";
-            notifyIcon1.ShowBalloonTip(1000);
+            notifyIcon1.ShowBalloonTip(4000);
             notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
             this.WindowState= FormWindowState.Minimized;
             this.Hide();
@@ -73,7 +59,7 @@ namespace LOLQueueAccepter
                 processInfo.UseShellExecute = true;
                 processInfo.Verb = "runas";
                 try { Process.Start(processInfo); }
-                catch (Exception) { MessageBox.Show("Run As Administrator!"); }
+                catch (Exception) { MessageBox.Show("Start as Administrator!"); }
                 System.Windows.Forms.Application.Exit();
                 Environment.Exit(0);
             }

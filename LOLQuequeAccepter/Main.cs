@@ -21,12 +21,10 @@ namespace LOLQueueAccepter
         private static int pid = 0;
         public static bool isLolRunning=false;
 
-
         public static void lolStatus()
         {
             while (true)
             {
-                
                 Process cli = Process.GetProcessesByName("LeagueClientUx").FirstOrDefault();
                 if (cli!=null)
                 {
@@ -34,29 +32,19 @@ namespace LOLQueueAccepter
                     isLolRunning = true;
                     if (pid!=cli.Id) pid = cli.Id;
                 }
-                else
-                {
-                    isLolRunning = false;
-                }
+                else isLolRunning = false;
                 Thread.Sleep(2000);
             }
         }
         #region getAuth
         private static string[] getAuth(Process cli)
         {
-            Process lol = Process.GetProcessesByName("LeagueClientUx").FirstOrDefault();
-            string lolPath = lol.MainModule.FileName;
+            string lolPath = cli.MainModule.FileName;
             lolPath = lolPath.Replace("LeagueClientUx.exe", "lockfile");
             string secret;
-            using (FileStream fileStream = new FileStream(
-                lolPath,
-                FileMode.Open,
-                FileAccess.Read,
-                FileShare.ReadWrite))
-            {
+            using (FileStream fileStream = new FileStream(lolPath,FileMode.Open,FileAccess.Read,FileShare.ReadWrite))
                 using (StreamReader streamReader = new StreamReader(fileStream))
                     secret = streamReader.ReadToEnd();
-            }
             string[] info = secret.Split(':');
             string port = info[2];
             string authToken = info[3];
@@ -96,26 +84,8 @@ namespace LOLQueueAccepter
                     }
                 }
                 else return new string[] { "999", "" };
-
             }
             catch { return new string[] { "999", "" }; }
-        }
-        #endregion
-        #region cliRequestUntilSucc
-        public static string[] cliRequestUntilSucc(string method, string url, string body = null)
-        {
-            string[] req = { "999", "" };
-            while (req[0].Substring(0,1)!="2")
-            {
-                req = cliRequest(method, url, body);
-                if (req[0].Substring(0, 1) == "2") return req;
-                else
-                {
-                    if (isLoLOpen()) Thread.Sleep(1000);
-                    else return req;
-                }
-            }
-            return req;
         }
         #endregion
     }
