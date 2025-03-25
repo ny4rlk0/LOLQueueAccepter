@@ -6,3 +6,6 @@
 <br>Lenovo Notu: dGPU (Harici GPU) Only modu seçtikten sonra Nvidia Denetim Masasından G-SYNC'i kapat. Yoksa Lenovo LOQ donuyor / kekemeliyor (stutter).
 <br>
 <br>LoL Notu: FPS 200 ya da 144 sabitle. 200 FPS Üstünde karakter hareket komutu verince saçma sapan yerlere anlık ışınlanarak oyunu oynanamaz hale getiriyor.
+<br>
+<br>Nvidia ayar dosyalarını bu yola at: C:/ProgramData/NVIDIA Corporation/Drs/
+<br>Sorunsuz Nvidia Sürümü: 561.03
