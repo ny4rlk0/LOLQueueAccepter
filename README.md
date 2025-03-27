@@ -13,9 +13,10 @@
 <br>HPET Kapatma (Yüksek Duyarlıklı Olay Süreölçeri):
 <br>bcdedit /set disabledynamictick yes
 <br>bcdedit /set useplatformclock no
+<br>bcdedit /set useplatformtick no
 <br>
 <br>HPET Geri Açmak için:
 <br>bcdedit /deletevalue disabledynamictick
 <br>bcdedit /deletevalue useplatformclock
-<br>
+<br>bcdedit /deletevalue useplatformtick
 <br>
