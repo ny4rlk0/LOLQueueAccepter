@@ -10,7 +10,7 @@
 <br>Nvidia ayar dosyalarını bu yola at: C:/ProgramData/NVIDIA Corporation/Drs/
 <br>Sorunsuz Nvidia Sürümü: 561.03
 <br>
-<br>HPET Kapatma:
+<br>HPET Kapatma (Yüksek Duyarlıklı Olay Süreölçeri):
 <br>bcdedit /set disabledynamictick yes
 <br>bcdedit /set useplatformclock no
 <br>
